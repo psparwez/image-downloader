@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "name": "Image Downloader",
+    "description": "Download any image with preview, title, and input box.",
+    "version": "0.1.0",
+    "permissions": [
+        "activeTab",
+        "downloads",
+        "storage"
+    ],
+    "icons": {
+        "16": "./assets/download-iamge-logo.png",
+        "48": "./assets/download-iamge-logo.png",
+        "128": "./assets/download-iamge-logo.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "./assets/download-iamge-logo.png",
+            "48": "./assets/download-iamge-logo.png",
+            "128": "./assets/download-iamge-logo.png"
+        }
+    },
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+    }
+}

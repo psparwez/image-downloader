@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Downloader</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-wrapper">
+        <img
+          src="./assets/download-iamge-logo.png"
+          class="logo"
+          alt="logo icon"
+        />
+      </div>
+
+      <div class="input-container">
+        <label for="url-input">Enter Image URL:</label>
+        <input type="text" id="url-input" placeholder="Paste image URL here" />
+      </div>
+
+      <div class="dropdown-wrapper">
+        <div class="dropdown-container">
+          <label for="file-type">Select File Type:</label>
+          <select id="file-type">
+            <option value="jpg">JPG</option>
+            <option value="png">PNG</option>
+            <option value="gif">GIF</option>
+            <option value="webp">WEBP</option>
+            <option value="svg">SVG</option>
+            <!-- Corrected the value for SVG -->
+          </select>
+        </div>
+
+        <div class="dropdown-container">
+          <label for="resolution">Select Resolution:</label>
+          <select id="resolution">
+            <option value="original">Original</option>
+            <option value="1080p">1080p</option>
+            <option value="720p">720p</option>
+            <option value="480p">480p</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="preview-container">
+        <div class="spinner" id="spinner" style="display: none"></div>
+        <img
+          id="image-preview"
+          src="https://placehold.co/720x400"
+          alt="Image Preview"
+        />
+      </div>
+      <div id="message-box" style="margin-bottom: 10px; font-size: 14px"></div>
+      <button id="download-btn" disabled>Download Image</button>
+
+      <!-- layer -->
+      <div class="layer"></div>
+    </div>
+
+    <!-- script -->
+    <script src="popup.js"></script>
+  </body>
+</html>
